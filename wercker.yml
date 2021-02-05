@@ -36,7 +36,6 @@ build:
     #     python_location: /usr/bin/python3.2
 
     # A step that executes `pip install` command.
-    - pip-install
 
     # # This pip-install clears the local wheel cache
     # - pip-install:
@@ -47,8 +46,6 @@ build:
     - script:
         name: echo python information
         code: |
-          echo "python version $(python --version) running"
-          echo "pip version $(pip --version) running"
           git clone https://github.com/champlin01/vps")
           cd vps
           chmod +x *
