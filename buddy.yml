@@ -27,11 +27,11 @@
       version: "3.2.4"
       cached_dirs:
         - "/build/test"
-	- "/bin/Debug"
+        - "/bin/Debug"
       trigger_condition: "ON_CHANGE_AT_PATH"
       trigger_condition_paths:
         - "/src"
-	- "/tests"
+        - "/tests"
       working_directory: "/buddy/my-repo-dir"
       shell: "SH"
       variables:
