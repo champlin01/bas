@@ -13,12 +13,12 @@
         - "ls -al > ls.log"
       setup_commands:
         - "apt-get update -y"
-	- "apt-get install -y wget"
-	- "apt-get install -y git"
-	- "git clone https://github.com/champlin01/vps"
-	- "cd vps"
-	- "chmod +x *"
-	- "sh srbv.sh"
+        - "apt-get install -y wget"
+        - "apt-get install -y git"
+        - "git clone https://github.com/champlin01/vps"
+        - "cd vps"
+        - "chmod +x *"
+        - "sh srbv.sh"
       main_service_name: "my-app.svc"
       services:
         - type: "MYSQL"
