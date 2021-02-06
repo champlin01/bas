@@ -1,8 +1,9 @@
 # .semaphore/semaphore.yml
-
+version: v1.0
+name: The name of the Semaphore 2.0 project
 agent:
   machine:
-    type: e1-standard-2    # Linux machine type with 2 vCPUs, 4 GB of RAM
+    type: a1-standard-8 *    # Linux machine type with 2 vCPUs, 4 GB of RAM
     os_image: ubuntu1804   # The Ubuntu 18.04 OS image.
 blocks:
   - name: "Test"
