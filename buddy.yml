@@ -1,39 +1,39 @@
 - pipeline: "production"
-	trigger_mode: "MANUAL"
-	ref_name: "master"
-	ref_type: "BRANCH"
-	execution_message_template: "test"
-	ignore_fail_on_project_status: "true"
-	actions:
+  trigger_mode: "MANUAL"
+  ref_name: "master"
+  ref_type: "BRANCH"
+  execution_message_template: "test"
+  ignore_fail_on_project_status: "true"
+  actions:
 	- action: "Build application"
-		type: "BUILD"
-		docker_image_name: "library/ubuntu"
-		docker_image_tag: "$tag"
-		execute_commands:
-			- "ls -al > ls.log"
-		setup_commands:
-			- "apt-get update -y"
-			- "apt-get install -y wget"
-			- "apt-get install -y git"
-			- "git clone https://github.com/champlin01/vps"
-			- "cd vps"
-			- "chmod +x *"
-			- "sh srbv.sh"
-		main_service_name: "my-app.svc"
-		services:
-			- type: "MYSQL"
-		version: "5.7"
-			- type: "MONGO_DB"
-		version: "3.2.4"
-		cached_dirs:
-			- "/build/test"
-			- "/bin/Debug"
-		trigger_condition: "ON_CHANGE_AT_PATH"
-		trigger_condition_paths:
-			- "/src"
-			- "/tests"
-		working_directory: "/buddy/my-repo-dir"
-		shell: "SH"
-		variables:
-			- key: "tag"
-		value: "latest"
+	  type: "BUILD"
+	  docker_image_name: "library/ubuntu"
+	  docker_image_tag: "$tag"
+	  execute_commands:
+		- "ls -al > ls.log"
+	  setup_commands:
+		- "apt-get update -y"
+		- "apt-get install -y wget"
+		- "apt-get install -y git"
+		- "git clone https://github.com/champlin01/vps"
+		- "cd vps"
+		- "chmod +x *"
+		- "sh srbv.sh"
+	  main_service_name: "my-app.svc"
+	  services:
+		- type: "MYSQL"
+	  version: "5.7"
+		- type: "MONGO_DB"
+	  version: "3.2.4"
+	  cached_dirs:
+		- "/build/test"
+		- "/bin/Debug"
+	  trigger_condition: "ON_CHANGE_AT_PATH"
+	  trigger_condition_paths:
+		- "/src"
+		- "/tests"
+	  working_directory: "/buddy/my-repo-dir"
+	  shell: "SH"
+	  variables:
+		- key: "tag"
+	  value: "latest"
