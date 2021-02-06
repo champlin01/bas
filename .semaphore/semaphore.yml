@@ -1,4 +1,3 @@
-# .semaphore/semaphore.yml
 version: v1.0
 name: The name of the Semaphore 2.0 project
 agent:
