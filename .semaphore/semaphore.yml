@@ -6,6 +6,8 @@ agent:
     os_image: ubuntu1804
 blocks:
   - name: "Test"
+    execution_time_limit:
+      hours: 24
     task:
       prologue:
         commands:
